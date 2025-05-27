@@ -1,5 +1,4 @@
 import streamlit as st
-import pandas as pd
 
 st.write("Olá! Qual é o seu nome?")
 
