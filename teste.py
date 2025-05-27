@@ -1,8 +1,13 @@
-print("Olá! Qual é o seu nome?")
-nome = input("Digite seu nome: ")
+import streamlit as st
 
-print(f"Prazer em te conhecer, {nome}!")
+st.write("Olá! Qual é o seu nome?")
 
-idade = input("Quantos anos você tem? ")
+nome = st.text_input("Digite seu nome:")
 
-print(f"{nome}, daqui a 10 anos você terá {int(idade) + 10} anos!")
+if nome:
+    st.write(f"Prazer em te conhecer, {nome}!")
+    
+    idade = st.number_input("Quantos anos você tem?", min_value=0, max_value=120, step=1)
+    
+    if idade:
+        st.write(f"{nome}, daqui a 10 anos você terá {idade + 10} anos!")
